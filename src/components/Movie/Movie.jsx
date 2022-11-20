@@ -6,7 +6,6 @@ import useStyles from './styles';
 // import Movie from '..';
 
 const Movie = ({ movie, i }) => {
-  console.log({ movie, i });
   const classes = useStyles();
   return (
     <Grid item xs={12} sm={6} md={4} lg={3} xl={2} className={classes.movie}>
