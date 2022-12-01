@@ -42,7 +42,10 @@ module.exports = {
         maxEOF: 1,
       },
     ],
-    "no-unused-vars": "off",
+    'no-unused-vars': 'off',
+    scripts: {
+      build: 'DISABLE_ESLINT_PLUGIN=true react-scripts build',
+    },
     'no-underscore-dangle': [
       'error',
       {
@@ -58,7 +61,7 @@ module.exports = {
         ],
       },
     ],
-    
+
     'object-curly-newline': 0,
     'react/jsx-filename-extension': 0,
     'react/jsx-one-expression-per-line': 0,
