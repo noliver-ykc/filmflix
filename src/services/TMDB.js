@@ -16,12 +16,12 @@ export const tmdbApi = createApi({
 
     // get movies by /type/
     getMovies: builder.query({
-      query: ({genreIdOrCategoryName, page, searchQuery }) => {
-        //get movies by search
+      query: ({ genreIdOrCategoryName, page, searchQuery }) => {
+        // get movies by search
         if (searchQuery) {
           return `/search/movie?query=${searchQuery}&page=${page}&api_key=${tmdbApiKey}`;
         }
-        //get movies by category (stored as strings)
+        // get movies by category (stored as strings)
         if (genreIdOrCategoryName && typeof genreIdOrCategoryName === 'string') {
           return `movie/${genreIdOrCategoryName}?page=${page}&api_key=${tmdbApiKey}`;
         }
@@ -33,10 +33,15 @@ export const tmdbApi = createApi({
         return `movie/popular?page=${page}&api_key=${tmdbApiKey}`;
       },
     }),
+    // Get inidividual movie
+    getMovie: builder.query({
+      query: (id) => `/movie/${id}?append_to_response=videos,credits&api_key=${tmdbApiKey}`,
+    }),
   }),
 });
 
 export const {
   useGetGenresQuery,
   useGetMoviesQuery,
+  useGetMovieQuery,
 } = tmdbApi;
