@@ -1,6 +1,9 @@
 import { makeStyles } from '@mui/styles';
 
 export default makeStyles((theme) => ({
+  movieBlurb: {
+    fontSize: '100px !important',
+  },
   containerSpaceAround: {
     display: 'flex',
     justifyContent: 'space-around',

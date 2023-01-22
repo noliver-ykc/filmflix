@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import useStyles from './styles';
 // import Movie from '..';
+import { PlusOne } from '@mui/icons-material';
 
 const Movie = ({ movie, i }) => {
   const classes = useStyles();
@@ -22,11 +23,10 @@ const Movie = ({ movie, i }) => {
               <Rating readOnly value={movie.vote_average / 2} precision={0.1} />
             </div>
           </Tooltip>
-
         </Link>
       </Grow>
-
     </Grid>
+
   );
 };
 
