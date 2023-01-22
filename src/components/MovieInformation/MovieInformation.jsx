@@ -48,7 +48,7 @@ const MovieInformation = () => {
         </Typography>
         <Grid item className={classes.containerSpaceAround}>
           <Box display="flex" align="center">
-            <Rating readOnly value={data.vote_average / 2} /> 
+            <Rating readOnly value={data.vote_average / 2} />
             <Typography variant="subtitle1" gutterBottom style={{marginLeft: '10px'}}>
               {data?.vote_average.toPrecision(2)} / 10
             </Typography>
@@ -59,19 +59,25 @@ const MovieInformation = () => {
         </Grid>
         <Grid item className={classes.genresContainer}>
           {data?.genres?.map((genre, i) => (
-            <Link 
-            key={genre.name} 
-            className={classes.links} 
-            to="/" 
+            <Link
+            key={genre.name}
+            className={classes.links}
+            to="/"
             onClick={()=> dispatch(selectGenreOrCategory(genre.id))}>
               <img src={genreIcons[genre.name.toLowerCase()]} className={classes.genreImage} height={30} />
               <Typography color="textPrimary" variant="subtitle1">
                 {genre?.name}
               </Typography>
+
             </Link>
+
           ))}
         </Grid>
+        <Typography sx={{ m: '2rem' }} variant="h5"align="center" gutterBottom>
+        {data?.overview}
+        </Typography>
       </Grid>
+
     </Grid>
   );
 };
